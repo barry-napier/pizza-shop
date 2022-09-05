@@ -6,4 +6,14 @@ html,
 body,
 #__next {
   height: 100%;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.pizza {
+  background-image: url("/images/pizza.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
