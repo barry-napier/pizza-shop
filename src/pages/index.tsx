@@ -43,8 +43,11 @@ const Home: NextPage = () => {
               and all delivered to your door.
             </p>
             <Link href="/">
-              <button className="mb-6 rounded-lg bg-black py-6 px-4 font-semibold text-white">
-                10% off Now
+              <button
+                className="mb-6 rounded-lg bg-black py-6 px-4 font-semibold text-white"
+                onClick={handleOpenModal}
+              >
+                Order Now
               </button>
             </Link>
           </main>
