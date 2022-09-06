@@ -66,9 +66,7 @@ const Home: NextPage = () => {
           </header>
         </section>
       </div>
-      {isOpen && (
-        <Modal isOpen={isOpen} setIsOpen={setIsOpen} userId={userId} />
-      )}
+      {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} />}
     </>
   );
 };
