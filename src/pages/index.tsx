@@ -1,12 +1,17 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Modal } from "../components/modal";
 
 const Home: NextPage = () => {
-  let [isOpen, setIsOpen] = useState(true);
+  const [userId, setUserId] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   const currentYear = new Date().getFullYear();
+
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
 
   return (
     <>
@@ -51,14 +56,19 @@ const Home: NextPage = () => {
         <section className="pizza h-full w-1/2 py-6 px-10">
           <header className="text-right">
             <Link href="/">
-              <button className="rounded-lg bg-orange-500 p-4 font-semibold text-white">
+              <button
+                className="rounded-lg bg-orange-500 p-4 font-semibold text-white"
+                onClick={handleOpenModal}
+              >
                 Order Now
               </button>
             </Link>
           </header>
         </section>
       </div>
-      <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
+      {isOpen && (
+        <Modal isOpen={isOpen} setIsOpen={setIsOpen} userId={userId} />
+      )}
     </>
   );
 };

@@ -1,5 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import Order from "./order";
 
 interface ModalProps {
   isOpen: boolean;
@@ -40,9 +41,7 @@ export function Modal({ isOpen, setIsOpen }: ModalProps) {
                 >
                   Order
                 </Dialog.Title>
-                <div className="mt-2">
-                  <p className="text-sm text-gray-500"></p>
-                </div>
+                <Order />
               </Dialog.Panel>
             </Transition.Child>
           </div>
